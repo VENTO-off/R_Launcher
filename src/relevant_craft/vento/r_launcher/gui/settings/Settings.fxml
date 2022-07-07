@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="435.0" prefWidth="666.0" style="-fx-background-color: white; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="relevant_craft.vento.r_launcher.gui.settings.Settings">
+   <children>
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="644.0" layoutY="21.0" onMouseClicked="#onClose_Settings" size="20" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="5.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </FontAwesomeIconView>
+      <FontAwesomeIconView layoutX="285.0" layoutY="22.0" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="Настройки" />
+      <FontAwesomeIconView glyphName="GEARS" layoutX="257.0" layoutY="22.0" size="20" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <JFXTabPane layoutY="25.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <tabs>
+            <Tab text="Общее">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Separator layoutX="4.0" layoutY="155.0" prefHeight="3.0" prefWidth="633.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="6.0" />
+                        <JFXToggleButton fx:id="useAutoBackground" alignment="TOP_LEFT" contentDisplay="RIGHT" graphicTextGap="10.0" layoutX="26.0" onAction="#onClick_useAutoBackground" prefHeight="62.0" prefWidth="636.0" text="Использовать автоматический фон">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXToggleButton>
+                        <FontAwesomeIconView layoutX="14.0" layoutY="131.0" size="16" style="-fx-font-weight: bold;" text="Свой фон:" />
+                        <JFXTextField fx:id="customBackground" layoutX="112.0" layoutY="109.0" prefHeight="31.0" prefWidth="416.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font></JFXTextField>
+                        <JFXButton fx:id="browseBackground" buttonType="RAISED" layoutX="543.0" layoutY="109.0" onMouseClicked="#onChooseBackground" prefHeight="31.0" prefWidth="97.0" ripplerFill="#45e6f5" style="-fx-background-color: #00bcd4;" text="Обзор..." textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXToggleButton fx:id="useCustomBackground" alignment="TOP_LEFT" contentDisplay="RIGHT" graphicTextGap="10.0" layoutX="26.0" layoutY="49.0" onAction="#onClick_useCustomBackground" prefHeight="62.0" prefWidth="636.0" text="Использовать свой фон">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXToggleButton>
+                        <JFXToggleButton fx:id="useDeveloperConsole" alignment="TOP_LEFT" contentDisplay="RIGHT" graphicTextGap="10.0" layoutX="26.0" layoutY="153.0" prefHeight="62.0" prefWidth="636.0" text="Консоль разработчика">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXToggleButton>
+                        <Separator layoutX="5.0" layoutY="310.0" prefHeight="3.0" prefWidth="633.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <FontAwesomeIconView layoutX="14.0" layoutY="249.0" size="16" style="-fx-font-weight: bold;" text="Язык/Language:" visible="false" />
+                        <JFXComboBox fx:id="language" layoutX="159.0" layoutY="227.0" prefHeight="31.0" prefWidth="209.0" visible="false" />
+                        <Icons525View fx:id="autobackgroundTooltip" fill="#0a6575" glyphName="INFO_CIRCLE2" layoutX="10.0" layoutY="38.0" size="16" />
+                        <Icons525View fx:id="custombackgroundTooltip" fill="#0a6575" glyphName="INFO_CIRCLE2" layoutX="10.0" layoutY="87.0" size="16" />
+                        <Icons525View fx:id="consoleTooltip" fill="#0a6575" glyphName="INFO_CIRCLE2" layoutX="10.0" layoutY="192.0" size="16" />
+                        <JFXToggleButton fx:id="checkAssets" alignment="TOP_LEFT" contentDisplay="RIGHT" graphicTextGap="10.0" layoutX="26.0" layoutY="202.0" prefHeight="62.0" prefWidth="636.0" text="Проверять Assets">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXToggleButton>
+                        <JFXToggleButton fx:id="enableAnalyzer" alignment="TOP_LEFT" contentDisplay="RIGHT" graphicTextGap="10.0" layoutX="26.0" layoutY="251.0" prefHeight="62.0" prefWidth="636.0" text="Анализатор ошибок Minecraft">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXToggleButton>
+                        <Icons525View fx:id="assetsTooltip" fill="#0a6575" glyphName="INFO_CIRCLE2" layoutX="10.0" layoutY="241.0" size="16" />
+                        <Icons525View fx:id="analyzerTooltip" fill="#0a6575" glyphName="INFO_CIRCLE2" layoutX="10.0" layoutY="290.0" size="16" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Minecraft">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXTextField fx:id="minecraftDirectory" editable="false" layoutX="150.0" layoutY="13.0" prefHeight="37.0" prefWidth="375.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font></JFXTextField>
+                        <FontAwesomeIconView layoutX="36.0" layoutY="38.0" size="16" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Директория:" />
+                        <JFXButton buttonType="RAISED" layoutX="547.0" layoutY="16.0" onMouseClicked="#onChooseDirectory" prefHeight="31.0" prefWidth="97.0" ripplerFill="#45e6f5" style="-fx-background-color: #00bcd4;" text="Обзор..." textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <FontAwesomeIconView layoutX="36.0" layoutY="93.0" size="16" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Разрешение:" />
+                        <JFXTextField fx:id="clientWidth" alignment="CENTER" layoutX="144.0" layoutY="69.0" onKeyTyped="#checkInput" prefHeight="31.0" prefWidth="65.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="clientHeight" alignment="CENTER" layoutX="234.0" layoutY="69.0" onKeyTyped="#checkInput" prefHeight="31.0" prefWidth="65.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <FontAwesomeIconView layoutX="216.0" layoutY="92.0" size="16" style="-fx-font-weight: bold;" text="X" />
+                        <JFXToggleButton fx:id="useFullScreen" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="10.0" layoutX="331.0" layoutY="58.0" prefHeight="60.0" prefWidth="313.0" text="Полноэкранный режим">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXToggleButton>
+                        <Separator layoutX="14.0" layoutY="59.0" prefHeight="3.0" prefWidth="633.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <Separator layoutX="5.0" layoutY="115.0" prefHeight="3.0" prefWidth="633.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <FontAwesomeIconView layoutX="36.0" layoutY="149.0" size="16" style="-fx-font-weight: bold;" text="Список версий:" />
+                        <JFXCheckBox fx:id="showSnapshots" contentDisplay="RIGHT" layoutX="171.0" layoutY="130.0" prefHeight="25.0" prefWidth="200.0" text="Снапшоты">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <JFXCheckBox fx:id="showBeta" contentDisplay="RIGHT" layoutX="171.0" layoutY="155.0" prefHeight="25.0" prefWidth="200.0" text="Бета (2010-2011 гг.)">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <JFXCheckBox fx:id="showAlpha" contentDisplay="RIGHT" layoutX="171.0" layoutY="180.0" prefHeight="25.0" prefWidth="200.0" text="Альфа (2010 г.)">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <Separator layoutX="5.0" layoutY="217.0" prefHeight="3.0" prefWidth="633.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <FontAwesomeIconView layoutX="36.0" layoutY="247.0" size="16" style="-fx-font-weight: bold;" text="JVM-Аргументы:" />
+                        <JFXTextField fx:id="JVM_args" layoutX="218.0" layoutY="223.0" prefHeight="37.0" prefWidth="430.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <FontAwesomeIconView layoutX="36.0" layoutY="286.0" size="16" style="-fx-font-weight: bold;" text="Minecraft-Аргументы:" />
+                        <JFXTextField fx:id="Minecraft_args" layoutX="218.0" layoutY="262.0" prefHeight="37.0" prefWidth="430.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <Separator layoutX="15.0" layoutY="308.0" prefHeight="3.0" prefWidth="633.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <JFXSlider fx:id="sliderRAM" layoutX="200.0" layoutY="325.0" majorTickUnit="256.0" max="2048.0" min="512.0" minorTickCount="256" onMouseReleased="#onSliderScroll" prefHeight="18.0" prefWidth="355.0" showTickLabels="true" showTickMarks="true" snapToTicks="true">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXSlider>
+                        <FontAwesomeIconView layoutX="36.0" layoutY="339.0" size="16" style="-fx-font-weight: bold;" text="Выделение памяти:" />
+                        <JFXTextField fx:id="RAM" alignment="CENTER" layoutX="568.0" layoutY="314.0" onKeyTyped="#checkInput" prefHeight="37.0" prefWidth="53.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <FontAwesomeIconView layoutX="621.0" layoutY="338.0" size="16" style="-fx-font-weight: bold;" text="МБ" />
+                        <JFXCheckBox fx:id="showModifications" layoutX="382.0" layoutY="132.0" text="Модификации (Forge &amp; OptiFine)">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXCheckBox>
+                        <JFXCheckBox fx:id="showLegacy" layoutX="382.0" layoutY="157.0" text="Старые версии (1.7.10 и ниже)">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXCheckBox>
+                        <Icons525View fx:id="minecraftdirectoryTooltip" fill="#0a6575" glyphName="INFO_CIRCLE2" layoutX="10.0" layoutY="40.0" size="16" />
+                        <Icons525View fx:id="resolutionTooltip" fill="#0a6575" glyphName="INFO_CIRCLE2" layoutX="10.0" layoutY="95.0" size="16" />
+                        <Icons525View fx:id="fullscreenTooltip" fill="#0a6575" glyphName="INFO_CIRCLE2" layoutX="370.0" layoutY="95.0" size="16" />
+                        <Icons525View fx:id="versionsTooltip" fill="#0a6575" glyphName="INFO_CIRCLE2" layoutX="10.0" layoutY="151.0" size="16" />
+                        <Icons525View fx:id="jvmargsTooltip" fill="#0a6575" glyphName="INFO_CIRCLE2" layoutX="10.0" layoutY="249.0" size="16" />
+                        <Icons525View fx:id="minecraftargsTooltip" fill="#0a6575" glyphName="INFO_CIRCLE2" layoutX="10.0" layoutY="288.0" size="16" />
+                        <Icons525View fx:id="ramTooltip" fill="#0a6575" glyphName="INFO_CIRCLE2" layoutX="10.0" layoutY="341.0" size="16" />
+                        <Label fx:id="ramWarning" layoutX="200.0" layoutY="350.0" prefHeight="17.0" textFill="RED">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Дополнительно">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="340.0" layoutY="18.0" onAction="#onClick_DefaultSettings" prefHeight="31.0" prefWidth="140.0" ripplerFill="#ff9b8b" style="-fx-background-color: #F26B50;" text="Сброс настроек" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <FontAwesomeIconView layoutX="36.0" layoutY="38.0" size="16" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Настройки лаунчера по умолчанию:" />
+                        <Icons525View fx:id="resetsettingsTooltip" fill="#0a6575" glyphName="INFO_CIRCLE2" layoutX="10.0" layoutY="40.0" size="16" />
+                        <Separator layoutX="14.0" layoutY="59.0" prefHeight="3.0" prefWidth="633.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <JFXToggleButton fx:id="optimizeSettings" alignment="TOP_LEFT" contentDisplay="RIGHT" graphicTextGap="10.0" layoutX="26.0" layoutY="57.0" onAction="#onClick_optimizeSettings" prefHeight="62.0" prefWidth="636.0" text="Оптимизировать настройки под текущий ПК">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXToggleButton>
+                        <Icons525View fx:id="optimizesettingsTooltip" fill="#0a6575" glyphName="INFO_CIRCLE2" layoutX="10.0" layoutY="95.0" size="16" />
+                        <Separator layoutX="5.0" layoutY="115.0" prefHeight="3.0" prefWidth="633.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                        <JFXToggleButton fx:id="enableCheats" alignment="TOP_LEFT" contentDisplay="RIGHT" graphicTextGap="10.0" layoutX="26.0" layoutY="113.0" onAction="#onClick_enableCheats" prefHeight="62.0" prefWidth="636.0" text="Добавить раздел «Читы»">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXToggleButton>
+                        <Icons525View fx:id="enableCheatsTooltip" fill="#0a6575" glyphName="INFO_CIRCLE2" layoutX="10.0" layoutY="151.0" size="16" />
+                        <Separator fx:id="separatorCheats" layoutX="5.0" layoutY="171.0" prefHeight="3.0" prefWidth="633.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <JFXButton layoutX="562.0" layoutY="33.0" onAction="#onHelp_Settings" style="-fx-background-color: #00bcd4; -fx-border-color: #70cfdb; -fx-border-radius: 3;" text="Помощь" textFill="WHITE" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="32.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="QUESTION_CIRCLE" size="19" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+   <effect>
+      <DropShadow height="40.0" radius="19.5" width="40.0" />
+   </effect>
+</AnchorPane>

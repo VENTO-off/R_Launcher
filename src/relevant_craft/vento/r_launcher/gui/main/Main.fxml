@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@Main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="relevant_craft.vento.r_launcher.gui.main.Main">
+   <children>
+      <Pane fx:id="background" prefHeight="600.0" prefWidth="1000.0" />
+      <Pane fx:id="toolBar" onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed" prefHeight="35.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="currentAccount" alignment="CENTER" layoutX="675.0" layoutY="4.0" onMouseClicked="#onAccount_Click" onMouseEntered="#onAccount_Entered" onMouseExited="#onAccount_Exited" opacity="0.75" prefWidth="222.0" text="account" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <FontAwesomeIconView fx:id="minimizeButton" fill="WHITE" glyphName="WINDOW_MINIMIZE" layoutX="941.0" layoutY="25.0" onMouseClicked="#onMinimize_Click" onMouseEntered="#onMinimize_Entered" onMouseExited="#onMinimize_Exited" opacity="0.75" size="16" strokeType="OUTSIDE" strokeWidth="0.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="closeButton" fill="WHITE" glyphName="CLOSE" layoutX="966.0" layoutY="26.0" onMouseClicked="#onClose_Click" onMouseEntered="#onClose_Entered" onMouseExited="#onClose_Exited" opacity="0.75" size="26" strokeType="OUTSIDE" strokeWidth="0.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fx:id="title" fill="WHITE" layoutX="14.0" layoutY="24.0" onMouseClicked="#onTitle_Click" onMouseEntered="#onTitle_Entered" onMouseExited="#onTitle_Exited" opacity="0.75" size="18" style="-fx-font-weight: bold;" text="R-Launcher">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </FontAwesomeIconView>
+            <MaterialDesignIconView fx:id="notifyButton" fill="WHITE" glyphName="BELL" layoutX="911.0" layoutY="26.0" onMouseClicked="#onNotify_Click" onMouseEntered="#onNotify_Entered" onMouseExited="#onNotify_Exited" opacity="0.75" size="22">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MaterialDesignIconView>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="bottomToolbar" prefHeight="75.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <JFXComboBox fx:id="versionList" focusColor="BLACK" layoutX="27.0" layoutY="31.0" onAction="#selectVersion" prefHeight="31.0" prefWidth="250.0" style="-fx-background-color: white;" unFocusColor="BLACK">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXComboBox>
+            <FontAwesomeIconView fill="WHITE" layoutX="27.0" layoutY="24.0" size="16" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Версия Minecraft:" wrappingWidth="249.9999850988388" />
+            <JFXButton fx:id="MinecraftButton" buttonType="RAISED" layoutX="302.0" layoutY="12.0" mnemonicParsing="false" onAction="#onStart_Minecraft" prefHeight="51.0" prefWidth="162.0" ripplerFill="#63fb41" style="-fx-background-color: #48BD2F; -fx-background-radius: 3px 0px 0px 3px;" text="Играть" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="MinecraftOptionsButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="464.0" layoutY="12.0" mnemonicParsing="false" onAction="#onOptions_Minecraft" prefHeight="51.0" prefWidth="11.0" ripplerFill="#63fb41" style="-fx-background-color: #48BD2F; -fx-background-radius: 0px 3px 3px 0px;" text="MinecraftOptionsButton" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="ELLIPSIS_V" size="20" textAlignment="CENTER" />
+               </graphic>
+            </JFXButton>
+            <HBox fx:id="toolbarbox" alignment="CENTER_RIGHT" layoutX="519.0" prefHeight="75.0" prefWidth="469.0" spacing="11.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="mainArea" layoutY="35.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0" />
+      <Pane fx:id="darkLayer" layoutX="10.0" layoutY="45.0" onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed" style="-fx-background-color: rgba(0, 0, 0, 0.75);" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="mainFrontArea" layoutY="35.0" visible="false" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0" />
+      <VBox fx:id="optionsList" alignment="BOTTOM_CENTER" layoutX="302.0" layoutY="537.0" prefHeight="0.0" prefWidth="195.0" spacing="3.0" style="-fx-background-color: white; -fx-background-radius: 4;" visible="false">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="20.0" radius="9.5" width="20.0" />
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <VBox fx:id="accountList" alignment="TOP_CENTER" layoutX="675.0" layoutY="40.0" prefWidth="222.0" spacing="3.0" style="-fx-background-color: white; -fx-background-radius: 4;" visible="false">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="20.0" radius="9.5" width="20.0" />
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <VBox fx:id="webList" alignment="TOP_CENTER" layoutX="12.0" layoutY="40.0" prefWidth="175.0" spacing="3.0" style="-fx-background-color: white; -fx-background-radius: 4;" visible="false">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="20.0" radius="9.5" width="20.0" />
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <VBox fx:id="notifyList" alignment="TOP_CENTER" layoutX="720.0" layoutY="40.0" prefWidth="265.0" spacing="3.0" style="-fx-background-color: white; -fx-background-radius: 4;" visible="false">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="20.0" radius="9.5" width="20.0" />
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+   </children>
+</AnchorPane>

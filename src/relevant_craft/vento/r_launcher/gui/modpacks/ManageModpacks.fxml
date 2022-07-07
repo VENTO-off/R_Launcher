@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="675.0" style="-fx-background-color: white; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="relevant_craft.vento.r_launcher.gui.modpacks.ManageModpacks">
+   <children>
+      <FontAwesomeIconView layoutX="255.0" layoutY="22.0" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="Менеджер Сборок" />
+      <FontAwesomeIconView glyphName="ARCHIVE" layoutX="226.0" layoutY="22.0" size="20" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <JFXTabPane layoutY="25.0" prefHeight="200.0" prefWidth="555.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <tabs>
+            <Tab text="Сборки">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane fx:id="tooltipArea" layoutX="339.0" layoutY="126.0" prefHeight="55.0" prefWidth="300.0" />
+                        <AnchorPane fx:id="arrowArea" layoutX="318.0" layoutY="189.0" prefHeight="108.0" prefWidth="230.0" />
+                        <Separator fx:id="separator" layoutX="306.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                        <JFXButton fx:id="addModpack" buttonType="RAISED" layoutX="514.0" layoutY="340.0" onAction="#onModpack_Create" prefHeight="31.0" prefWidth="141.0" ripplerFill="#b7ff78" style="-fx-background-color: #7FCF3D;" text="Создать" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXListView fx:id="modpackList" layoutX="17.0" layoutY="14.0" onMouseClicked="#onModpack_Choose" prefHeight="357.0" prefWidth="275.0" />
+                        <FontAwesomeIconView fx:id="nameText" layoutX="323.0" layoutY="31.0" size="16" style="-fx-font-weight: bold;" text="Название сборки:" />
+                        <JFXTextField fx:id="nameField" layoutX="323.0" layoutY="35.0" prefHeight="37.0" prefWidth="332.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXComboBox fx:id="versionCombobox" layoutX="323.0" layoutY="111.0" onAction="#onVersion_Choose" prefHeight="31.0" prefWidth="332.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXComboBox>
+                        <FontAwesomeIconView fx:id="versionText" layoutX="323.0" layoutY="107.0" size="16" style="-fx-font-weight: bold;" text="Версия Minecraft:" />
+                        <JFXSpinner fx:id="loadingCreate" layoutX="471.0" layoutY="340.0" prefHeight="31.0" prefWidth="31.0" visible="false" />
+                        <JFXCheckBox fx:id="installModloader" layoutX="323.0" layoutY="232.0" text="Установить Forge">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <JFXCheckBox fx:id="installOptiFine" layoutX="323.0" layoutY="302.0" text="Установить OptiFine">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <JFXCheckBox fx:id="installLiteLoader" layoutX="323.0" layoutY="267.0" text="Установить LiteLoader">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <JFXComboBox fx:id="ramCombobox" layoutX="323.0" layoutY="181.0" prefHeight="31.0" prefWidth="332.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXComboBox>
+                        <FontAwesomeIconView fx:id="ramText" layoutX="323.0" layoutY="177.0" size="16" style="-fx-font-weight: bold;" text="Выделение памяти:" />
+                        <JFXButton fx:id="createModpack" buttonType="RAISED" layoutX="414.0" layoutY="303.0" onAction="#onModpack_PreCreate" prefHeight="31.0" prefWidth="150.0" ripplerFill="#b7ff78" style="-fx-background-color: #7FCF3D;" text="Создать сборку" textFill="WHITE" visible="false">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXSpinner fx:id="loading" layoutX="304.0" layoutY="141.0" prefHeight="38.0" prefWidth="38.0" radius="20.0" visible="false" />
+                        <FontAwesomeIconView fx:id="loadingText" layoutX="120.0" layoutY="203.0" size="16" strokeType="OUTSIDE" strokeWidth="0.0" text="..." textAlignment="CENTER" visible="false" wrappingWidth="402.0" />
+                        <JFXButton fx:id="backButton" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="322.0" layoutY="340.0" onAction="#onModpack_Back" prefHeight="31.0" ripplerFill="#ffe071" style="-fx-background-color: #F7C50E;" text="Отмена" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" size="21" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="folderModpack" alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="371.0" layoutY="340.0" onAction="#onModpack_Folder" prefHeight="31.0" ripplerFill="#88c5ff" style="-fx-background-color: #2672FF;" text="Открыть папку" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="FOLDER_OPEN" size="21" wrappingWidth="18.0" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="deleteModpack" alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" layoutX="421.0" layoutY="340.0" onAction="#onModpack_Delete" prefHeight="31.0" prefWidth="8.0" ripplerFill="#ff9b8b" style="-fx-background-color: #F26B50;" text="Удалить" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="21" />
+                           </graphic>
+                        </JFXButton>
+                        <Label fx:id="ramWarning" layoutX="323.0" layoutY="212.0" prefHeight="17.0" textFill="RED">
+                           <font>
+                              <Font name="System Bold" size="11.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="622.0" layoutY="20.0" onMouseClicked="#onClose_ManageModpacks" size="20" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="5.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></FontAwesomeIconView>
+      <JFXButton layoutX="562.0" layoutY="33.0" onAction="#onHelp_ManageModpacks" style="-fx-background-color: #00bcd4; -fx-border-color: #70cfdb; -fx-border-radius: 3;" text="Помощь" textFill="WHITE" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="32.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="QUESTION_CIRCLE" size="19" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+   <effect>
+      <DropShadow blurType="GAUSSIAN" height="40.0" radius="19.5" width="40.0" />
+   </effect>
+</AnchorPane>

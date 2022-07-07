@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane prefHeight="480.0" prefWidth="850.0" style="-fx-background-color: white; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="relevant_craft.vento.r_launcher.gui.modpacks.Modpacks">
+   <effect>
+      <DropShadow height="40.0" radius="19.5" width="40.0" />
+   </effect>
+   <children>
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="654.0" layoutY="31.0" onMouseClicked="#onClose_Modpacks" size="20" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="5.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </FontAwesomeIconView>
+      <FontAwesomeIconView layoutX="385.0" layoutY="22.0" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="Модпаки" />
+      <FontAwesomeIconView glyphName="FILE_ARCHIVE_ALT" layoutX="359.0" layoutY="22.0" size="20" />
+      <JFXTabPane fx:id="tabPane" layoutX="10.0" layoutY="35.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <tabs>
+            <Tab text="Модпаки">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="719.0">
+                     <children>
+                        <FontAwesomeIconView layoutX="15.0" layoutY="30.0" size="15" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Установленные модпаки:" wrappingWidth="250.0" />
+                        <JFXListView fx:id="installedModpacks" layoutX="15.0" layoutY="40.0" prefHeight="365.0" prefWidth="250.0" />
+                        <Separator layoutX="274.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                        <FontAwesomeIconView fx:id="modpacksFor" layoutX="285.0" layoutY="30.0" size="15" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Найдено модпаков:" wrappingWidth="250.0" />
+                        <FontAwesomeIconView fx:id="searchIcon" glyphName="SEARCH" layoutX="612.0" layoutY="28.0" size="16" />
+                        <JFXTextField fx:id="search" layoutX="636.0" layoutY="5.0" prefWidth="200.0" promptText="Поиск" unFocusColor="#4d4d4d">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXListView fx:id="webModpacks" layoutX="286.0" layoutY="40.0" prefHeight="310.0" prefWidth="550.0" />
+                        <FontAwesomeIconView fx:id="versionText" layoutX="285.0" layoutY="370.0" size="15" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Версия Minecraft:" wrappingWidth="220.0" />
+                        <JFXComboBox fx:id="versionList" layoutX="286.0" layoutY="372.0" onAction="#onVersion_Choose" prefHeight="31.0" prefWidth="250.0" AnchorPane.bottomAnchor="12.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXComboBox>
+                        <Separator fx:id="separator" layoutX="558.0" layoutY="360.0" orientation="VERTICAL" prefHeight="45.0" />
+                        <FontAwesomeIconView fx:id="categoryText" layoutX="586.0" layoutY="370.0" size="15" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Категория:" wrappingWidth="250.0" />
+                        <JFXComboBox fx:id="categoryList" layoutX="586.0" layoutY="372.0" onAction="#onCategory_Choose" prefHeight="31.0" prefWidth="250.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXComboBox>
+                        <JFXSpinner fx:id="loading" layoutX="539.0" layoutY="176.0" prefHeight="38.0" prefWidth="38.0" visible="false" />
+                        <Label fx:id="loadingText" alignment="CENTER" layoutX="383.0" layoutY="221.0" prefHeight="25.0" prefWidth="350.0" text="Label" visible="false">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Pane fx:id="current_cf_project" layoutX="286.0" layoutY="40.0" prefHeight="365.0" prefWidth="550.0" style="-fx-border-color: #c8c8c8;" visible="false" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <JFXButton layoutX="562.0" layoutY="33.0" onAction="#onHelp_Modpacks" style="-fx-background-color: #00bcd4; -fx-border-color: #70cfdb; -fx-border-radius: 3;" text="Помощь" textFill="WHITE" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="32.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="QUESTION_CIRCLE" size="19" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

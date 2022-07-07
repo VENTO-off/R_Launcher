@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="666.0" style="-fx-background-color: white; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="relevant_craft.vento.r_launcher.gui.accounts.Accounts">
+   <children>
+      <FontAwesomeIconView layoutX="236.0" layoutY="22.0" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="Менеджер Аккаунтов" />
+      <FontAwesomeIconView glyphName="USERS" layoutX="209.0" layoutY="21.0" size="20" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="622.0" layoutY="20.0" onMouseClicked="#onClose_Account" size="20" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="5.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></FontAwesomeIconView>
+      <JFXTabPane layoutY="25.0" prefHeight="200.0" prefWidth="555.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <tabs>
+            <Tab text="Аккаунты">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXButton fx:id="deleteAccount" buttonType="RAISED" disable="true" layoutX="147.0" layoutY="290.0" onAction="#onAccountDelete" prefHeight="31.0" prefWidth="141.0" ripplerFill="#ff9b8b" style="-fx-background-color: #F26B50;" text="Удалить" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Separator layoutX="330.0" layoutY="14.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                        <JFXButton fx:id="addAccount" buttonType="RAISED" layoutX="424.0" layoutY="290.0" onAction="#onAccountAdd" prefHeight="31.0" prefWidth="141.0" ripplerFill="#b7ff78" style="-fx-background-color: #7FCF3D;" text="Добавить" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXListView fx:id="accountList" layoutX="17.0" layoutY="14.0" onMouseClicked="#onAccountChoose" prefHeight="261.0" prefWidth="296.0" />
+                        <JFXTextField fx:id="loginField" layoutX="346.0" layoutY="35.0" prefHeight="31.0" prefWidth="296.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <FontAwesomeIconView fx:id="loginText" layoutX="346.0" layoutY="31.0" size="16" style="-fx-font-weight: bold;" text="E-mail:" />
+                        <FontAwesomeIconView fx:id="passwordText" layoutX="346.0" layoutY="108.0" size="16" style="-fx-font-weight: bold;" text="Пароль:" />
+                        <JFXPasswordField fx:id="passwordField" layoutX="346.0" layoutY="112.0" prefHeight="37.0" prefWidth="296.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXRadioButton fx:id="MojangAccount" layoutX="346.0" layoutY="184.0" onAction="#onClick_Mojang" prefHeight="21.0" prefWidth="297.0" selected="true" text="Mojang аккаунт">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXRadioButton>
+                        <Label disable="true" layoutX="509.0" layoutY="184.0" prefHeight="21.0" text="(лицензия)">
+                           <font>
+                              <Font name="System Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXRadioButton fx:id="PirateAccount" layoutX="346.0" layoutY="214.0" onAction="#onClick_Pirate" prefHeight="21.0" prefWidth="297.0" text="Пиратский аккаунт">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="ElybyAccount" layoutX="346.0" layoutY="244.0" onAction="#onClick_Elyby" prefHeight="21.0" prefWidth="297.0" text="Ely.by аккаунт">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXRadioButton>
+                        <Label disable="true" layoutX="496.0" layoutY="244.0" prefHeight="21.0" text="(скины)">
+                           <font>
+                              <Font name="System Italic" size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXSpinner fx:id="loading" layoutX="382.0" layoutY="290.0" prefHeight="31.0" prefWidth="31.0" visible="false" />
+                        <JFXButton fx:id="upAccount" alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" disable="true" ellipsisString=" " layoutX="40.0" layoutY="290.0" onAction="#onAccount_Up" prefHeight="32.0" prefWidth="34.0" ripplerFill="#ffe071" style="-fx-background-color: #F7C50E;">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="ARROW_UP">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></FontAwesomeIconView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="downAccount" alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" disable="true" ellipsisString=" " layoutX="83.0" layoutY="290.0" onAction="#onAccount_Down" prefHeight="32.0" prefWidth="34.0" ripplerFill="#ffe071" style="-fx-background-color: #F7C50E;">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="ARROW_DOWN" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="showPassword" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="612.0" layoutY="116.0" onMousePressed="#onPasswordShow" onMouseReleased="#onPasswordHide" prefWidth="34.0" ripplerFill="#b5b5b5" style="-fx-background-radius: 100; -fx-max-width: 30px; -fx-max-height: 30px; -fx-min-width: 30px; -fx-min-height: 30px;">
+                           <graphic>
+                              <MaterialDesignIconView glyphName="EYE_OFF" size="20" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <JFXButton layoutX="562.0" layoutY="33.0" onAction="#onHelp_Account" style="-fx-background-color: #00bcd4; -fx-border-color: #70cfdb; -fx-border-radius: 3;" text="Помощь" textFill="WHITE" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="32.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="QUESTION_CIRCLE" size="19" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+   <effect>
+      <DropShadow blurType="GAUSSIAN" height="40.0" radius="19.5" width="40.0" />
+   </effect>
+</AnchorPane>

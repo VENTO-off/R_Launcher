@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="666.0" style="-fx-background-color: white; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="relevant_craft.vento.r_launcher.gui.versions.Versions">
+   <children>
+      <FontAwesomeIconView layoutX="250.0" layoutY="22.0" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="Менеджер Версий" />
+      <FontAwesomeIconView glyphName="SLACK" layoutX="223.0" layoutY="23.0" size="20" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <JFXTabPane layoutY="25.0" prefHeight="200.0" prefWidth="555.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <tabs>
+            <Tab text="Версии">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Separator layoutX="249.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                        <JFXListView fx:id="versionList" layoutX="17.0" layoutY="14.0" onMouseClicked="#onVersionChoose" prefHeight="280.0" prefWidth="220.0" />
+                        <JFXSpinner fx:id="loading" layoutX="443.0" layoutY="290.0" prefHeight="31.0" prefWidth="31.0" visible="false" />
+                        <JFXButton fx:id="actionButton" buttonType="RAISED" disable="true" layoutX="496.0" layoutY="290.0" onAction="#onVersion_Action" prefHeight="31.0" prefWidth="141.0" ripplerFill="#ff9b8b" style="-fx-background-color: #F26B50;" text="Удалить" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="folderVersion" buttonType="RAISED" disable="true" layoutX="281.0" layoutY="290.0" onAction="#onFolder_Action" prefHeight="31.0" prefWidth="141.0" ripplerFill="#88c5ff" style="-fx-background-color: #2672FF;" text="Открыть папку" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Label fx:id="nameText" layoutX="267.0" layoutY="14.0" text="Название:">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nameField" layoutX="353.0" layoutY="14.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="releaseText" layoutX="267.0" layoutY="43.0" text="Релиз версии:">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="releaseField" layoutX="384.0" layoutY="43.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="typeText" layoutX="267.0" layoutY="72.0" text="Тип версии:">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="typeField" layoutX="367.0" layoutY="72.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="installText" layoutX="267.0" layoutY="101.0" text="Установлено:">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="installField" layoutX="378.0" layoutY="101.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXCheckBox fx:id="onlyInstalledCheckbox" layoutX="17.0" layoutY="298.0" onAction="#onOnlyInstalled_Check" prefHeight="25.0" prefWidth="220.0" selected="true" text="Только установленные">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <AnchorPane fx:id="tooltipArea" layoutX="309.0" layoutY="114.0" prefHeight="50.0" prefWidth="300.0" />
+                        <AnchorPane fx:id="arrowArea" layoutX="268.0" layoutY="168.0" prefHeight="108.0" prefWidth="230.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="622.0" layoutY="20.0" onMouseClicked="#onClose_Versions" size="20" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="5.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></FontAwesomeIconView>
+      <JFXButton layoutX="562.0" layoutY="33.0" onAction="#onHelp_Versions" style="-fx-background-color: #00bcd4; -fx-border-color: #70cfdb; -fx-border-radius: 3;" text="Помощь" textFill="WHITE" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="32.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="QUESTION_CIRCLE" size="19" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+   <effect>
+      <DropShadow blurType="GAUSSIAN" height="40.0" radius="19.5" width="40.0" />
+   </effect>
+</AnchorPane>

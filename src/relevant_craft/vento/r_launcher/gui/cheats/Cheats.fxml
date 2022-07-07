@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.emojione.EmojiOneView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="456.0" prefWidth="750.0" style="-fx-background-color: white; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="relevant_craft.vento.r_launcher.gui.cheats.Cheats">
+   <effect>
+      <DropShadow height="40.0" radius="19.5" width="40.0" />
+   </effect>
+   <children>
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="654.0" layoutY="31.0" onMouseClicked="#onClose_Cheats" size="20" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="5.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </FontAwesomeIconView>
+      <FontAwesomeIconView layoutX="351.0" layoutY="22.0" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="Читы" />
+      <EmojiOneView glyphName="SKULL_CROSSBONES" layoutX="327.0" layoutY="22.0" size="20" />
+      <JFXTabPane layoutX="10.0" layoutY="35.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <tabs>
+            <Tab text="Читы">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="719.0">
+                     <children>
+                        <JFXListView fx:id="cheatsList" layoutX="14.0" layoutY="40.0" onMouseClicked="#onCheat_Choose" prefHeight="260.0" prefWidth="345.0" />
+                        <Separator fx:id="separator3" layoutX="372.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                        <JFXComboBox fx:id="versionList" layoutX="14.0" layoutY="346.0" onAction="#onVersion_Choose" prefHeight="31.0" prefWidth="345.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXComboBox>
+                        <FontAwesomeIconView fx:id="versionList_Text" layoutX="14.0" layoutY="341.0" size="16" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Версия Minecraft:" wrappingWidth="249.9999850988388" />
+                        <Separator fx:id="separator2" layoutX="14.0" layoutY="316.0" prefWidth="345.0" />
+                        <JFXSpinner fx:id="imageLoading" layoutX="543.0" layoutY="138.0" prefHeight="38.0" prefWidth="38.0" visible="false" />
+                        <Label fx:id="cheatLoadingText" alignment="CENTER" layoutX="392.0" layoutY="188.0" prefHeight="25.0" prefWidth="340.0" text="..." visible="false">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="actionButton" buttonType="RAISED" layoutX="484.0" layoutY="247.0" onAction="#onCheat_Action" prefHeight="31.0" prefWidth="155.0" ripplerFill="#beff85" style="-fx-background-color: #7FCF3D;" text="Установить" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXProgressBar fx:id="cheatProgressbar" layoutX="386.0" layoutY="295.0" prefHeight="5.0" prefWidth="350.0" />
+                        <Separator fx:id="separator" layoutX="386.0" layoutY="316.0" prefWidth="350.0" />
+                        <AnchorPane fx:id="imageArea" layoutX="386.0" layoutY="14.0" prefHeight="220.0" prefWidth="350.0" />
+                        <Pane fx:id="cheatNameLayout" layoutX="386.0" layoutY="14.0" prefHeight="20.0" prefWidth="350.0" style="-fx-background-color: rgba(0, 0, 0, 0.5);">
+                           <children>
+                              <Label fx:id="cheatName" alignment="CENTER" prefWidth="350.0" text=" " textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Label fx:id="descriptionArea" layoutX="386.0" layoutY="324.0" prefWidth="350.0" wrapText="true">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <JFXSpinner fx:id="loading" layoutX="355.0" layoutY="155.0" prefHeight="38.0" prefWidth="38.0" radius="20.0" visible="false" />
+                        <FontAwesomeIconView fx:id="loadingText" layoutX="171.0" layoutY="218.0" size="16" strokeType="OUTSIDE" strokeWidth="0.0" text="..." textAlignment="CENTER" visible="false" wrappingWidth="402.0" />
+                        <AnchorPane fx:id="arrowArea" layoutX="387.0" layoutY="157.0" prefHeight="219.0" prefWidth="213.0" visible="false" />
+                        <FontAwesomeIconView fx:id="cheatsFor" layoutX="14.0" layoutY="27.0" size="15" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Найдено 0 читов:" wrappingWidth="160.0" />
+                        <FontAwesomeIconView fx:id="searchIcon" glyphName="SEARCH" layoutX="175.0" layoutY="28.0" size="16" />
+                        <JFXTextField fx:id="search" layoutX="199.0" layoutY="5.0" prefHeight="31.0" prefWidth="160.0" promptText="Поиск" unFocusColor="#4d4d4d">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label fx:id="progressLabel" alignment="CENTER_RIGHT" layoutX="556.0" layoutY="299.0" prefHeight="16.0" prefWidth="180.0" textFill="#727272">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <JFXButton layoutX="562.0" layoutY="33.0" onAction="#onHelp_Cheats" style="-fx-background-color: #00bcd4; -fx-border-color: #70cfdb; -fx-border-radius: 3;" text="Помощь" textFill="WHITE" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="32.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="QUESTION_CIRCLE" size="19" />
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="666.0" style="-fx-background-color: white; -fx-background-radius: 6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="relevant_craft.vento.r_launcher.gui.analyzer.Analyzer">
+   <children>
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="622.0" layoutY="20.0" onMouseClicked="#onClose_Analyzer" size="20" strokeType="OUTSIDE" strokeWidth="0.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="5.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></FontAwesomeIconView>
+      <FontAwesomeIconView layoutX="211.0" layoutY="22.0" size="20" strokeType="OUTSIDE" strokeWidth="0.0" text="Анализатор Ошибок Minecraft" />
+      <FontAwesomeIconView glyphName="BAR_CHART" layoutX="183.0" layoutY="22.0" size="20" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <JFXTabPane layoutY="25.0" prefHeight="200.0" prefWidth="555.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <tabs>
+            <Tab text="Отчёт">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXSpinner fx:id="loading" layoutX="316.0" layoutY="119.0" prefHeight="38.0" prefWidth="38.0" radius="20.0" visible="false" />
+                        <FontAwesomeIconView fx:id="loadingText" layoutX="132.0" layoutY="182.0" size="16" strokeType="OUTSIDE" strokeWidth="0.0" text="..." textAlignment="CENTER" visible="false" wrappingWidth="402.0" />
+                        <Label fx:id="errorLogName" layoutX="15.0" layoutY="14.0" prefHeight="25.0" text="Лог ошибки:">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="errorLogText" editable="false" layoutX="15.0" layoutY="40.0" prefHeight="70.0" prefWidth="633.0" style="-fx-background-color: transparent; -fx-background-insets: 0px; -fx-background-color: #f5f5f5;">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextArea>
+                        <Label fx:id="descriptionName" layoutX="15.0" layoutY="124.0" prefHeight="25.0" text="Описание проблемы:">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane fx:id="descriptionText" hbarPolicy="NEVER" layoutX="15.0" layoutY="150.0" prefHeight="125.0" prefWidth="633.0" style="-fx-background-color: white; -fx-border-color: #f5f5f5;" />
+                        <JFXButton fx:id="openUrl" buttonType="RAISED" layoutX="233.0" layoutY="290.0" prefHeight="31.0" prefWidth="200.0" ripplerFill="#88c5ff" style="-fx-background-color: #2672FF;" text="Открыть инструкцию" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+   <effect>
+      <DropShadow blurType="GAUSSIAN" height="40.0" radius="19.5" width="40.0" />
+   </effect>
+</AnchorPane>
