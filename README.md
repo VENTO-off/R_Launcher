@@ -28,11 +28,11 @@ The main features of R-Launcher:
 ## Architecture
 ![screenshot](images/architecture.png)
 The architecture of R-Launcher includes 5 modules:
-- R-Updater: an application that installs launcher, checks for updates and runs a launcher
-- R-Launcher: an application that can download Minecraft files, assets, cheats, resource packs, mods and runs a game
-- R-Launcher Web: PHP scripts that are located on a web server, accept requests from launcher and send back necessary data
-- R-Parser: a server application that parses resource packs, mods, maps and modpacks from curseforge.com
-- R-Socket: a server application that returns a direct link for downloading requested file from curseforge.com
+- [R-Updater](https://github.com/VENTO-off/R_Updater_v2): an application that installs launcher, checks for updates and runs a launcher
+- [R-Launcher](https://github.com/VENTO-off/R_Launcher): an application that can download Minecraft files, assets, cheats, resource packs, mods and runs a game
+- [R-Launcher Web](https://github.com/VENTO-off/R_Launcher_web): PHP scripts that are located on a web server, accept requests from launcher and send back necessary data
+- [R-Parser](https://github.com/VENTO-off/R_Parser): a server application that parses resource packs, mods, maps and modpacks from curseforge.com
+- [R-Socket](https://github.com/VENTO-off/R_Socket): a server application that returns a direct link for downloading requested file from curseforge.com
 
 ## Screenshots
 ![screenshot](images/screenshot1.png)
